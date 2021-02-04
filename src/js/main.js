@@ -6,12 +6,12 @@ let app = {
         {
             id: 12356,
             text: 'Сделать тестовое',
-            status: false
+            status: true
         },
         {
             id: 11356,
             text: 'Поспать',
-            status: true
+            status: false
         }
     ],
 
