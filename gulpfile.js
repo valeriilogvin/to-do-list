@@ -152,8 +152,8 @@ gulp.task('watch', function () {
     gulp.watch([path.watch.html], {usePolling: true}, gulp.parallel('html:build'));
     gulp.watch([path.watch.fonts], {usePolling: true}, gulp.parallel('fonts:build'));
     gulp.watch([path.watch.js], {usePolling: true}, gulp.parallel('js:build'));
-    gulp.watch([path.watch.jsLibs], {usePolling: true}, gulp.parallel('jsLibs:build, js.min'));
-    gulp.watch([path.watch.cssLibs], {usePolling: true}, gulp.parallel('cssLibs:build, css.min'));
+    gulp.watch([path.watch.jsLibs], {usePolling: true}, gulp.parallel('jsLibs:build', 'js.min'));
+    gulp.watch([path.watch.cssLibs], {usePolling: true}, gulp.parallel('cssLibs:build', 'css.min'));
     gulp.watch('src/img/**/*', {usePolling: true}, gulp.parallel('img'));
 });
 

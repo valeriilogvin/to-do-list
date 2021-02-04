@@ -1,4 +1,93 @@
-@import "components/fonts";
-@import "components/resetcss";
-@import "components/header";
-@import "components/variables";
+#to-do-list{
+  font-family: Arial, sans-serif;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 40px auto;
+  background: #aaa;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 800px;
+  width: 100%;
+
+  h1{
+    margin: 0 0 20px;
+  }
+
+  input{
+    line-height: 40px;
+    border-radius: 30px;
+    padding: 0 25px;
+    outline: none;
+    border: none;
+  }
+
+  button{
+    margin-top: 15px;
+    line-height: 40px;
+    border-radius: 30px;
+    width: 100px;
+    transition: all .2s ease;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover{
+      background: #88a2aa;
+    }
+  }
+}
+
+#list{
+  display: flex;
+  flex-direction: column;
+  .list-item{
+    display: flex;
+    align-items: center;
+
+    .number{
+      margin: 0 5px;
+    }
+
+    .checkbox:checked ~ .text{
+      text-decoration: line-through;
+    }
+
+    a{
+      margin-left: 10px;
+      width: 10px;
+      height: 10px;
+      position: relative;
+      cursor: pointer;
+
+      &:hover{
+        &:after,
+        &:before{
+          background: red;
+        }
+      }
+
+      &:after,
+      &:before{
+        transition: all .2s ease;
+        position: absolute;
+        transform-origin: 50%;
+        width: 10px;
+        height: 1px;
+        top: 50%;
+        left: 0;
+        content: '';
+        background: #000;
+      }
+
+      &:after{
+        transform: translateY(-50%) rotate(-45deg);
+      }
+      &:before{
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+  }
+}
