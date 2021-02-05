@@ -12,6 +12,7 @@ let gulp = require("gulp"),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     cache = require('gulp-cache'),
+    eslint = require('gulp-eslint'),
     reload = browserSync.reload;
 
 // пути к файлам
@@ -96,6 +97,18 @@ gulp.task("jsLibs:build", function () {
     return gulp.src(path.src.jsLibs)
         .pipe(gulp.dest(path.build.jsLibs)) // Выгружаем в папку build/js как есть
         .pipe(reload({stream: true})); // Обновляем js на странице при изменении
+});
+
+// js lint
+gulp.task("jsLint", function () {
+    return gulp.src(path.src.js)
+        .pipe(eslint(
+            {
+                fix : true
+            }
+        ))
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
 });
 
 // libs.min.js

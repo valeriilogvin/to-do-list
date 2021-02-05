@@ -5,19 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/main.css">
 
 </head>
 <body>
 
     <div id="to-do-list">
-        <h1>To-do list</h1>
+        <h1>TO DO</h1>
         <div class="form-block">
             <input type="text" id="input" placeholder="Task">
-            <button onclick="listItemAppend()">Add</button>
+            <button onclick="listItemAppend()">Add task</button>
         </div>
         <div id="list"></div>
     </div>
+
+    <div class="edit-modal">
+        <h1>Edit task</h1>
+        <div class="close" onclick="editModalVisibilityHandler()"></div>
+        <div class="form-block">
+            <input type="text" id="input-edit" placeholder="Task">
+            <button id="btn-edit" onclick="listItemEditSave()">Save</button>
+        </div>
+    </div>
+    <div class="overlay"></div>
 
 
     <script type="text/javascript" src="js/main.js"></script>
